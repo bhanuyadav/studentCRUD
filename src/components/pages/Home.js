@@ -14,8 +14,7 @@ const Home = () => {
     setUser(result.data.reverse());
   };
 
-
-  const deleteUser = async id => {
+  const deleteUser = async (id) => {
     await axios.delete(`http://localhost:3003/users/${id}`);
     loadUsers();
   };
@@ -39,21 +38,21 @@ const Home = () => {
             {users.map((user, index) => (
               <tr>
                 <th scope="row">{index + 1}</th>
-                <td >{user.name}</td>
+                <td>{user.name}</td>
                 <td>{user.dob}</td>
                 {user.age <= 10 ? (
-                  <td bgcolor="red">{user.age}</td>
+                  <td style={{color:'red'}}>{user.age}</td>
                 ) : (
-                  <td >{user.age}</td>
+                  <td>{user.age}</td>
                 )}
-                {/* above funacion not work */}
+                
                 <td>{user.gender}</td>
                 <td>
-                  <Link className="btn btn-primary  " to={`/users/${user.id}`}>
+                  <Link className="btn btn-primary  " STYLE="margin:0px 5px 0px 0px" to={`/users/${user.id}`}>
                     Details
                   </Link>
                   <Link
-                    className="btn btn-outline-primary  "
+                    className="btn btn-outline-primary  " STYLE="margin:0px 5px 0px 0px"
                     to={`/users/edit/${user.id}`}
                   >
                     Edit

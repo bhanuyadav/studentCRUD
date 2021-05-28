@@ -161,51 +161,6 @@
         "catchPhrase": "Implemented secondary concept",
         "bs": "e-enable extensible e-tailers"
       }
-    },
-    {
-      "name": "rsst",
-      "dob": "2021-05-12",
-      "gender": "m",
-      "age": "5",
-      "course": "3",
-      "email": "dg@c.c",
-      "id": 9
-    },
-    {
-      "name": "gfhdh",
-      "dob": "2021-05-28",
-      "gender": "",
-      "age": "",
-      "course": "",
-      "email": "sg@dfs.c",
-      "id": 10
-    },
-    {
-      "name": "hthhthrh",
-      "dob": "2021-05-08",
-      "gender": "",
-      "age": "",
-      "course": "",
-      "email": "",
-      "id": 11
-    },
-    {
-      "name": "dgd",
-      "dob": "2021-05-06",
-      "gender": "m",
-      "age": "50",
-      "course": "4",
-      "email": "hsfqe@c.c",
-      "id": 12
-    },
-    {
-      "name": "kbsf",
-      "dob": "2021-05-27",
-      "gender": "",
-      "age": "",
-      "course": "P.h.d",
-      "email": "hfg@g.co",
-      "id": 13
     }
   ]
 }
