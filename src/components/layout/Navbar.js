@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="container">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            AssessMenttask
+            AssessMentTask
           </Link>
           <button
             className="navbar-toggler"
@@ -21,14 +21,6 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" exact to="/">
-                  Home
-                </Link>
-              </li>
-              
-            </ul>
             <form class="d-flex">
               <input
                 class="form-control me-2"
@@ -42,7 +34,7 @@ const Navbar = () => {
             </form>
           </div>
         </div>
-        <Link className="btn btn-outline-light" to="/users/add">Add User</Link>
+        <Link className="btn btn-outline-light" to="/users/add">Add Student</Link>
       </div>
     </nav>
   );

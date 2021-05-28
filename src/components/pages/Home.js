@@ -29,33 +29,49 @@ const Home = () => {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>
-              <th scope="col">User Name</th>
-              <th scope="col">Email</th>
+              <th scope="col">Date Of Birth</th>
+              <th scope="col">Age-Years</th>
+              <th scope="col">Gender</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            {
-                users.map((user, index) => (
-                      <tr>
-                      <th scope="row">{index + 1}</th>
-                      <td>{user.name}</td>
-                      <td>{user.username}</td>
-                      <td>{user.email}</td>
-                      <td>
-                         <Link class="btn btn-primary mr-2" to={`/users/${user.id}`}>
-                           Details
-                          </Link>
-                          <Link class="btn btn-outline-primary mr-2" to={`/users/edit/${user.id}`}>
-                           Edit
-                          </Link>
-                          <Link class="btn btn-danger" onClick={() => deleteUser(user.id)}>
-                           Delete
-                          </Link>
-                      </td>
-                      </tr>
-                    ))
-            }
+            {users.map((user, index) => (
+              <tr>
+                <th scope="row">{index + 1}</th>
+                <td >{user.name}</td>
+                <td>{user.dob}</td>
+                {user.age <= 10 ? (
+                  <td bgcolor="red">{user.age}</td>
+                ) : (
+                  <td >{user.age}</td>
+                )}
+                {/* above funacion not work */}
+                <td>{user.gender}</td>
+                <td>
+                  <Link className="btn btn-primary  " to={`/users/${user.id}`}>
+                    Details
+                  </Link>
+                  <Link
+                    className="btn btn-outline-primary  "
+                    to={`/users/edit/${user.id}`}
+                  >
+                    Edit
+                  </Link>
+
+                  <Link
+                    className="btn btn-danger"
+                    onClick={() =>
+                      window.confirm(
+                        "Are you sure you wish to delete this Student?"
+                      ) && deleteUser(user.id)
+                    }
+                  >
+                    Delete
+                  </Link>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

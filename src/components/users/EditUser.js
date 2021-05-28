@@ -7,13 +7,13 @@ const EditUser = () => {
   const { id } = useParams();
   const [user, setUser] = useState({
     name: "",
-    username: "",
+    dob:"",
+    gender:"",
+    age:"",
     email: "",
-    phone: "",
-    website: ""
   });
 
-  const { name, username, email, phone, website } = user;
+  const { name, dob, gender, age, email} = user;
   const onInputChange = e => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
@@ -37,7 +37,7 @@ const EditUser = () => {
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="text-center mb-4">Edit A User</h2>
         <form onSubmit={e => onSubmit(e)}>
-          <div className="form-group">
+          <div className="form-group  mb-3">
             <input
               type="text"
               className="form-control form-control-lg"
@@ -47,46 +47,37 @@ const EditUser = () => {
               onChange={e => onInputChange(e)}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group  mb-3">
+            <input
+              type="date"
+              className="form-control form-control-lg"
+              placeholder="Enter Your Date Of Birth"
+              name="dob"
+              value={dob}
+              onChange={e => onInputChange(e)}
+            />
+          </div>
+          <div className="form-group  mb-3">
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your Username"
-              name="username"
-              value={username}
+              placeholder="Enter Your Age"
+              name="age"
+              value={age}
               onChange={e => onInputChange(e)}
             />
           </div>
-          <div className="form-group">
-            <input
-              type="email"
-              className="form-control form-control-lg"
-              placeholder="Enter Your E-mail Address"
-              name="email"
-              value={email}
-              onChange={e => onInputChange(e)}
-            />
-          </div>
-          <div className="form-group">
+          <div className="form-group  mb-3">
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your Phone Number"
-              name="phone"
-              value={phone}
+              placeholder="Enter Your Gender"
+              name="gender"
+              value={gender}
               onChange={e => onInputChange(e)}
             />
           </div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your Website Name"
-              name="website"
-              value={website}
-              onChange={e => onInputChange(e)}
-            />
-          </div>
+         
           <button className="btn btn-warning btn-block">Update User</button>
         </form>
       </div>
