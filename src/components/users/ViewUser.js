@@ -5,10 +5,9 @@ import axios from "axios";
 const ViewUser = () => {
   const [user, setUser] = useState({
     name: "",
-    dob: "",
-    gender: "",
-    course: "",
-    email: ""
+    area:"",
+    category:"",
+    status:"",
   });
   const { id } = useParams();
   useEffect(() => {
@@ -23,14 +22,12 @@ const ViewUser = () => {
       <Link className="btn btn-primary" to="/">
         back to Home
       </Link>
-      <h1 className="display-4">Student Id: {id}</h1>
+      <h1 className="display-4">Shop Id: {id}</h1>
       <hr />
       <ul className="list-group w-50">
         <li className="list-group-item">name: {user.name}</li>
-        <li className="list-group-item">dob: {user.dob}</li>
-        <li className="list-group-item">gender: {user.gender}</li>
-        <li className="list-group-item">course: {user.course}</li>
-        <li className="list-group-item">Email: {user.email}</li>
+        <li className="list-group-item">Area: {user.area}</li>
+        <li className="list-group-item">Category: {user.category}</li>
       </ul>
     </div>
   );

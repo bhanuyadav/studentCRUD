@@ -6,14 +6,13 @@ const AddUser = () => {
   let history = useHistory();
   const [user, setUser] = useState({
     name: "",
-    dob: "",
-    gender: "",
-    age: "",
-    course: "",
-    email: "",
+    area:"",
+    category:"",
+    openingdate:"",
+    closingdate:"",
   });
 
-  const { name, dob, gender, age, course, email } = user;
+  const { name, area, category,openingdate,closingdate } = user;
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
@@ -26,15 +25,65 @@ const AddUser = () => {
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Add A Student</h2>
+        <h2 className="text-center mb-4">Add A Shop</h2>
         <form onSubmit={(e) => onSubmit(e)}>
           <div className="form-group mb-3">
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your Name"
+              placeholder="Enter Shop Name"
               name="name"
               value={name}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          
+          <div className="form-group mb-3">
+            <label>Pick Area</label>
+            <select
+              class="form-control"
+              id="sel1"
+              name="area"
+              value={area}
+              onChange={(e) => onInputChange(e)}
+            >
+              <option>Mumbai</option>
+              <option>Pune</option>
+              <option>Nagpur</option>
+              <option>Banglore</option>
+              <option>Vadodara</option>
+  
+            </select>
+          </div>
+          
+
+          <div className="form-group mb-3">
+            <label>Pick Category</label>
+            <select
+              class="form-control"
+              id="sel1"
+              name="category"
+              value={category}
+              onChange={(e) => onInputChange(e)}
+            >
+              <option>Salon</option>
+              <option>Chemist</option>
+              <option>Restaurant</option>
+              <option>Grocery</option>
+              <option>Juice</option>
+  
+            </select>
+          </div>
+
+               
+           
+          <div className="form-group mb-3">
+            <input
+              type="date"
+              className="form-control form-control-lg"
+              placeholder="Enter Your Date Of Birth"
+              name="openingdate"
+              value={openingdate}
               onChange={(e) => onInputChange(e)}
             />
           </div>
@@ -43,63 +92,17 @@ const AddUser = () => {
               type="date"
               className="form-control form-control-lg"
               placeholder="Enter Your Date Of Birth"
-              name="dob"
-              value={dob}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
-          <div className="form-group mb-3">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your Age"
-              name="age"
-              value={age}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
-          <div className="form-group mb-3">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your Gender"
-              name="gender"
-              value={gender}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
-          <div className="form-group mb-3">
-            <label>Pick A Course</label>
-            <select
-              class="form-control"
-              id="sel1"
-              name="course"
-              value={course}
-              onChange={(e) => onInputChange(e)}
-            >
-              <option>B.tech</option>
-              <option>M.tech</option>
-              <option>M.B.A</option>
-              <option>M.com</option>
-              <option>P.h.d</option>
-              <option>B.com</option>
-              <option>B.A</option>
-              <option>M.A</option>
-            </select>
-          </div>
-
-          <div className="form-group mb-3">
-            <input
-              type="email"
-              className="form-control form-control-lg"
-              placeholder="Enter Your email"
-              name="email"
-              value={email}
+              name="closingdate"
+              value={closingdate}
               onChange={(e) => onInputChange(e)}
             />
           </div>
 
-          <button className="btn btn-primary btn-block">Add User</button>
+
+         
+
+         
+          <button className="btn btn-primary btn-block">Add Shop</button>
         </form>
       </div>
     </div>

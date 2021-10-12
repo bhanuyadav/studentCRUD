@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="container">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            AssessMentTask
+          FyntuneAssessMent
           </Link>
           <button
             className="navbar-toggler"
@@ -34,7 +34,9 @@ const Navbar = () => {
             </form>
           </div>
         </div>
-        <Link className="btn btn-outline-light" to="/users/add">Add Student</Link>
+        <Link className="btn btn-outline-light" to="/users/add">
+          Add Shop
+        </Link>
       </div>
     </nav>
   );

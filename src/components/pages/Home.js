@@ -27,10 +27,13 @@ const Home = () => {
           <thead class="table-dark">
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Date Of Birth</th>
-              <th scope="col">Age-Years</th>
-              <th scope="col">Gender</th>
+              <th scope="col">Shop Name</th>
+              <th scope="col">Area</th>
+              {/* <th scope="col">Age-Years</th> */}
+              <th scope="col">Category</th>
+              <th scope="col">opening</th>
+              <th scope="col">closing</th>
+              <th scope="col">Status</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -39,20 +42,32 @@ const Home = () => {
               <tr>
                 <th scope="row">{index + 1}</th>
                 <td>{user.name}</td>
-                <td>{user.dob}</td>
-                {user.age <= 10 ? (
-                  <td style={{color:'red'}}>{user.age}</td>
+                <td>{user.area}</td>
+                {/* {user.age <= 10 ? (
+                  <td style={{ color: "red" }}>{user.age}</td>
                 ) : (
                   <td>{user.age}</td>
                 )}
+                 */}
+                <td>{user.category}</td>
+                <td>{user.openingdate}</td>
+                <td>{user.closingdate}</td>
+                {/* <td>{user.status}</td> */}
+                {/* {let todaydate= new Date().toISOString().slice(0, 10);} */}
                 
-                <td>{user.gender}</td>
+
+                {new Date().toISOString().slice(0, 10) >= user.openingdate && new Date().toISOString().slice(0, 10) <= user.closingdate?(<td>Open</td>):(<td>close</td>)}
                 <td>
-                  <Link className="btn btn-primary  " STYLE="margin:0px 5px 0px 0px" to={`/users/${user.id}`}>
+                  <Link
+                    className="btn btn-primary  "
+                    STYLE="margin:0px 5px 0px 0px"
+                    to={`/users/${user.id}`}
+                  >
                     Details
                   </Link>
                   <Link
-                    className="btn btn-outline-primary  " STYLE="margin:0px 5px 0px 0px"
+                    className="btn btn-outline-primary  "
+                    STYLE="margin:0px 5px 0px 0px"
                     to={`/users/edit/${user.id}`}
                   >
                     Edit
@@ -62,7 +77,7 @@ const Home = () => {
                     className="btn btn-danger"
                     onClick={() =>
                       window.confirm(
-                        "Are you sure you wish to delete this Student?"
+                        "Are you sure you wish to delete this Shop?"
                       ) && deleteUser(user.id)
                     }
                   >
